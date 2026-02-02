@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For Vanshika ❤️</title>
+<title>For VANSHIII ❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
@@ -18,19 +18,29 @@ body {
   overflow:hidden;
 }
 
+/* Dark overlay */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  backdrop-filter: blur(2px);
+  z-index:0;
+}
+
 /* Glass card */
 .card{
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.88);
   backdrop-filter: blur(10px);
   padding:30px;
   border-radius:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  box-shadow:0 15px 40px rgba(0,0,0,0.35);
   width:90%;
   max-width:420px;
   position:relative;
+  z-index:2;
 }
 
-h2{color:#d6336c;}
+h2{color:#ff4d6d;}
 
 button{
   padding:14px 24px;
@@ -69,8 +79,15 @@ button{
 
 <body>
 
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay"></div>
+
 <div class="card">
-<h2>Vanshika, will you be my Valentine? 💖</h2>
+<h2>VANSHIII, will you be my Valentine? 💖</h2>
 <button id="yes">Yes 💘</button>
 <button id="no">No 😜</button>
 <p id="result"></p>
@@ -92,10 +109,8 @@ noBtn.addEventListener("mouseenter",()=>{
 yesBtn.addEventListener("click",()=>{
   result.innerHTML="YAY!!! She said YES 🎉💖";
   
-  // Confetti
   confetti({particleCount:250,spread:140});
 
-  // Hearts burst
   for(let i=0;i<25;i++){
     let heart=document.createElement("div");
     heart.className="heart";
